@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/styles.css'%}">
+</head>
+<body>
+    <h1>Student Info</h1>
+    {%if student%}
+    <table border="1">
+        
+        <thead>
+            <th>rollno</th>
+            <th>name</th>
+            <th>marks</th>
+            <th>dob</th>
+            <th>email</th>
+            <th>phone Number</th>
+            <th>address</th>
+
+        </thead>
+        {%for stu in student%}
+        <tr>
+            <td>{{stu.rollno}}</td>
+            <td>{{stu.name}}</td>
+            <td>{{stu.marks}}</td>
+            <td>{{stu.dob}}</td>
+            <td>{{stu.email}}</td>
+            <td>{{stu.phone_number}}</td>
+            <td>{{stu.address}}</td>
+
+        </tr>
+        {%endfor%}
+
+    </table>
+    {%else%}
+    <p>No records Foud</p>
+    {%endif%}
+</body>
+</html>
